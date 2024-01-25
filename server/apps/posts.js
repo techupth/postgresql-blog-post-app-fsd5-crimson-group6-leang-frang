@@ -57,9 +57,9 @@ postRouter.post("/", async (req, res) => {
   const hasPublished = req.body.status === "published";
   const newPost = {
     ...req.body,
-    created_at: new Date(),
-    updated_at: new Date(),
-    published_at: hasPublished ? new Date() : null,
+    created_at: now(),
+    updated_at: now(),
+    published_at: hasPublished ? now() : null,
   };
 
   try {
